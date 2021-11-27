@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(51, 51, 51);
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#hero {
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/29/02/14/man-1866784_960_720.jpg');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    z-index: 1;
+}
+
+#hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .7;
+    z-index: -1;
+}
+
+.hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+.hero h1 {
+    display: block;
+    width: fit-content;
+    position: relative;
+    font-size: 4rem;
+    color: transparent;
+    animation: text_reval .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.hero h1:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.hero h1:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.hero h1:nth-child(3) {
+    animation-delay: 3s;
+}
+
+.hero span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: crimson;
+    animation: text 1s ease;
+    animation-delay: .3s;
+}
+
+.hero h1:nth-child(1) span {
+    animation-delay: .5s;
+}
+
+.hero h1:nth-child(2) span {
+    animation-delay: 1.5s;
+}
+
+.hero h1:nth-child(3) span {
+    animation-delay: 2.5s;
+}
+
+.cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid crimson;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease background-color;
+}
+
+.cta:hover {
+    color: white;
+    background-color: crimson;
+}
+
+/* HERO END */
+
+/* HERO MEDIA  QUERY 540PX */
+
+/* END HERO MEDIA QUERY */
+
+/* KEYFRAMES */
+@keyframes text {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+
+}
+
+@keyframes text_reval {
+    100% {
+        color: white;
+    }
+}
+
+/* KEYFRAMES END */
+/* about section styling */
+.about__me {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: crimson;
+}
+
+.me img {
+    margin: 80px 0 0 80px;
+    height: 700px;
+    border-radius: 5px;
+    border-left: 15px solid crimson;
+    border-top: 15px solid crimson;
+
+}
+
+.life {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+
+}
+
+.life h1 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.life p {
+    width: 70%;
+    font-size: 2rem;
+    color: rgb(125, 125, 125);
+}
+
+.life li {
+    margin-top: 10px;
+    list-style: none;
+}
+
+.life button {
+    margin-top: 20px;
+    display: block;
+    height: 40px;
+    width: 120px;
+    border: none;
+    background-color: crimson;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.life button a {
+    color: black;
+}
+
+
+/*  Media query*/
+@media (max-width:1024px) {
+    .about__me {
+        flex-direction: column;
+    }
+
+    .me img {
+        display: block;
+        margin: 50px auto;
+        height: 550px;
+
+    }
+
+    .life p {
+        width: 90%;
+        font-size: 2.2rem;
+    }
+
+}
+
+
+/* SKILLS */
+
+.title-skills {
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.skills_container {
+    display: grid;
+    height: 100%;
+    place-items: center;
+}
+
+.skills-bar {
+    width: 800px;
+    background: rgb(104, 101, 101);
+    border-radius: 10px;
+    padding: 25px 30px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.skills-bar .bar {
+    margin: 20px 0;
+}
+
+.skills-bar .bar .info {
+    margin-bottom: 15px;
+}
+
+.skills-bar .bar .info span {
+    font-size: 2rem;
+}
+
+.skills-bar .bar .progress-line {
+    position: relative;
+    height: 10px;
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+
+}
+
+.bar .progress-line span {
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    background-color: crimson;
+    border-radius: 10px;
+}
+
+.progress-line.html span {
+    width: 90%;
+}
+
+.progress-line.css span {
+    width: 75%;
+}
+
+.progress-line.js span {
+    width: 30%;
+}
+
+.progress-line.react span {
+    width: 5%;
+}
+
+.progress-line.adobe span {
+    width: 50%;
+}
+
+
+
+.bar .progress-line span::after {
+    position: absolute;
+    right: 0;
+    top: -25px;
+    font-size: 1.6rem;
+    padding: 5px 8px;
+
+}
+
+.progress-line.html span::after {
+    content: '90%';
+}
+
+.progress-line.css span::after {
+    content: '75%';
+}
+
+.progress-line.js span::after {
+    content: '30%';
+}
+
+.progress-line.react span::after {
+    content: '0%';
+}
+
+.progress-line.adobe span::after {
+    content: '50%';
+}
+
+/* media query  */
+@media (max-width:1024px) {
+    .skills-bar {
+        width: 80%;
+    }
+
+    .progress-line.react span {
+        width: 10%;
+    }
+
+}
+
+/* END SKILLS */
+/* contact */
+.contact {
+    background-color: rgb(52, 52, 52);
+    padding: 30px 20px;
+
+}
+
+.contact h1 {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: crimson;
+    text-align: center;
+}
+
+.contact .wrap {
+    padding-top: 20px;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.contact input,
+.contact button,
+.contact textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px;
+    font-size: 12px;
+    background-color: rgb(203, 203, 203);
+
+}
+
+.contact input {
+    height: 36px;
+    color: black;
+}
+
+.contact textarea {
+    height: 120px;
+    font-family: sans-serif;
+}
+
+.contact button {
+
+    font-size: 14px;
+    line-height: 40px;
+    color: white;
+    border: 2px solid white;
+    background-color: black;
+}
+
+
+
+/* FOOTER */
+.footer_container {
+
+    display: flex;
+    margin: 0 auto;
+    height: 10vh;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+
+.footer_container .bx {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    color: crimson;
+}
